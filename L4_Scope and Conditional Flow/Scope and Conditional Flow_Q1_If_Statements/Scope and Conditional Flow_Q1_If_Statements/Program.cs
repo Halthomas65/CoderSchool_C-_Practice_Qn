@@ -1,61 +1,144 @@
-﻿//Part 1
-// Get two inputs from the userds and store them in two variables and use and if statement to check if the two inputs are equal and print out a message to the console.
+﻿// This input is for part 1 to 6
+Console.WriteLine("Enter first number: ");
+int num1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter second number: ");
+int num2 = Convert.ToInt32(Console.ReadLine());
+
+//Part 1
+// Get two inputs from the users and store them in two variables and use and if statement to check if the two inputs are equal and print out a message to the console.
 // Hint: You can use the == operator to check if two values are equal.
+Console.WriteLine("The two numbers are equal: " + (num1 == num2));
 
 
 //Part 2
 // Get two inputs from the user and store them in two variables and use an if statement to check if the first input is greater than the second input and print out a message to the console.
 // Hint: You can use the > operator to check if the first input is greater than the second input.
+Console.WriteLine("The first number is greater than the second number: " + (num1 > num2));
 
 //Part 3
 // Get two inputs from the user and store them in two variables and use an if statement to check if the first input is less than the second input and print out a message to the console.
 // Hint: You can use the < operator to check if the first input is less than the second input.
+Console.WriteLine("The first number is less than the second number: " + (num1 < num2));
 
 //Part 4
 // Get two inputs from the user and store them in two variables and use an if statement to check if the first input is not equal to the second input and print out a message to the console.
 // Hint: You can use the != operator to check if two values are not equal.
+Console.WriteLine("The two numbers are not equal: " + (num1 != num2));
 
 //Part 5
 // Get two inputs from the user and store them in two variables and use an if statement to check if the first input is greater than or equal to the second input and print out a message to the console.
 // Hint: You can use the >= operator to check if the first input is greater than or equal to the second input.
+Console.WriteLine("The first number is greater than or equal to the second number: " + (num1 >= num2));
 
 //Part 6
 // Get two inputs from the user and store them in two variables and use an if statement to check if the first input is less than or equal to the second input and print out a message to the console.
 // Hint: You can use the <= operator to check if the first input is less than or equal to the second input.
+Console.WriteLine("The first number is less than or equal to the second number: " + (num1 <= num2));
 
 //Part 7
 // Create a math quiz that asks the user a math question and checks if the user's answer is correct. If the user's answer is correct, print out a message to the console. If the user's answer is incorrect, print out a different message to the console.
 // Hint: You can use the Console.ReadLine() method to get input from the user and use an if statement to check if the user's answer is correct.
-
+Console.WriteLine("What is 2 + 2? ");
+int answer = Convert.ToInt32(Console.ReadLine());
+if (answer == 4)
+{
+    Console.WriteLine("Correct!");
+}
+else
+{
+    Console.WriteLine("Incorrect!");
+}
 
 //Part 8
 // Create a program that asks the user for their age and checks if the user is old enough to vote. If the user is old enough to vote, print out a message to the console. If the user is not old enough to vote, print out a different message to the console.
 // Hint: You can use the Console.ReadLine() method to get input from the user and use an if statement to check if the user is old enough to vote.
+Console.WriteLine("Enter your age: ");
+int age = Convert.ToInt32(Console.ReadLine());
+const int votingAge = 18;
+if (age >= votingAge)
+{
+    Console.WriteLine("You are old enough to vote!");
+}
+else
+{
+    Console.WriteLine("You are not old enough to vote!");
+}
 
 
 //Part 9
-// Create a program that check whihc state a enemy is in based on their health points. If the enemy has 100 health points, print out a message to the console. If the enemy has 50 health points, print out a different message to the console. If the enemy has 25 health points, print out a different message to the console. If the enemy has 0 health points, print out a different message to the console.
+// Create a program that check which state a enemy is in based on their health points. 
+// If the enemy has 100 health points, print out a message to the console. 
+// If the enemy has 50 health points, print out a different message to the console. 
+// If the enemy has 25 health points, print out a different message to the console. 
+// If the enemy has 0 health points, print out a different message to the console.
 // Hint: You can use an if-else statement to check the enemy's health points and print out a message based on the enemy's health points.
+Console.WriteLine("Enter enemy's health points: ");
+int enemyHP = Convert.ToInt32(Console.ReadLine());
+if (enemyHP == 100)
+{
+    Console.WriteLine("Enemy is at full health!");
+}
+else if (enemyHP == 50)
+{
+    Console.WriteLine("Enemy is at half health!");
+}
+else if (enemyHP == 25)
+{
+    Console.WriteLine("Enemy is at low health!");
+}
+else if (enemyHP == 0)
+{
+    Console.WriteLine("Enemy is defeated!");
+}
+else
+{
+    Console.WriteLine("Enemy is at " + enemyHP + " health points.");
+}
 
 //Part 10
 // Create a program that checks if a user is eligible for a discount based on their age. If the user is 18 years old or older, print out a message to the console. If the user is younger than 18 years old, print out a different message to the console.
 // Hint: You can use an if-else statement to check the user's age and print out a message based on the user's age.
-
-
+Console.WriteLine("Enter your age: "); 
+int userAge = Convert.ToInt32(Console.ReadLine());
+if (userAge >= 18)
+{
+    Console.WriteLine("You are eligible for a discount!");
+}
+else
+{
+    Console.WriteLine("You are not eligible for a discount.");
+}
 
 
 
 
 ////////////// Break , Continue Statements //////////////
+Console.WriteLine("\n////////////// Break , Continue Statements //////////////\n");
 
 
 //Part 1
 // Create a program that counts from 1 to 20, but skips counting the number 5.
 // Hint: Use a for loop to iterate through the numbers and a continue statement to skip the number 5.
+for (int i = 1; i <= 20; i++)
+{
+    if (i == 5)
+    {
+        continue;
+    }
+    Console.WriteLine(i);
+}
 
 //Part 2
 // Create a program that prints the numbers from 1 to 10, but breaks the loop if the number 7 is encountered.
 // Hint: Use a for loop to iterate through the numbers and a break statement to exit the loop when 7 is encountered.
+for (int i = 1; i <= 10; i++)
+{
+    if (i == 7)
+    {
+        break;
+    }
+    Console.WriteLine(i);
+}
 
 //Part 3
 // Write a program to print all even numbers from 1 to 20, but skip printing the number 10.
