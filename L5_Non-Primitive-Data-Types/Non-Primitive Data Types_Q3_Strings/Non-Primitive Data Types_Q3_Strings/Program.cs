@@ -12,6 +12,7 @@
 //Hint: You can use the Console.WriteLine() method to output the result.
 
 
+
 //Part 2
 //Create a program so that it concatenates three strings and then outputs the result in lowercase.
 //Hint: You can use the ToLower() method to convert a string to lowercase.
@@ -401,7 +402,6 @@
 // Enter the steps taken: 12345
 // Expected Output:
 // Step Count:  12345
-
 
 
 
