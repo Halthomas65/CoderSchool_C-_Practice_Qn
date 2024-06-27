@@ -3,6 +3,16 @@
 // Define an enum named "Weekday" to represent the days of the week (Monday to Sunday) in English.
 // Hint: Use the provided Vietnamese example as a reference to declare the enum in English.
 /* Enums are commonly used to represent a fixed set of values, such as the days of the week, ensuring consistency and preventing invalid values. */
+enum Weekday
+{
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday,
+}
 
 //---------------------------------------------------------------------
 // Question 2: Enemy State Enumeration
