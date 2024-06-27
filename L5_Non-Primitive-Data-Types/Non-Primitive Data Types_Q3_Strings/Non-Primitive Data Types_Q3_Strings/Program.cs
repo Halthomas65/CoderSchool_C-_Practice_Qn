@@ -3,82 +3,111 @@
 //To uncomment a part, select the part and press Ctrl + K + U
 //Press Ctrl + F5 to run the code.
 
+using System.Text.RegularExpressions;
 
-
+// These variables are for part 1 to part 3
+string str1 = "Hello";
+string str2 = "World";
+string str3 = "ehe!";
+string result;
 
 //Part 1
 //Create a program so that it concatenates three strings and then outputs the result in uppercase.
 //Hint: You can use the ToUpper() method to convert a string to uppercase.
 //Hint: You can use the Console.WriteLine() method to output the result.
-
+result = str1 + " " + str2 + " " + str3;
+Console.WriteLine(result.ToUpper());
 
 
 //Part 2
 //Create a program so that it concatenates three strings and then outputs the result in lowercase.
 //Hint: You can use the ToLower() method to convert a string to lowercase.
 //Hint: You can use the Console.WriteLine() method to output the result.
+// result = str1 + " " + str2 + " " + str3;
+Console.WriteLine(result.ToLower());
 
 //Part 3
 //Write a program to find the length of a string.
 //Hint: You can use the Length property to find the length of a string.
 //Hint: You can use the Console.WriteLine() method to output the result.
+Console.WriteLine("Length or the string: " + result.Length);
 
 //Part 4
 //Write a program to find the index of a character in a string.
 //Hint: You can use the IndexOf() method to find the index of a character in a string.
 //Hint: You can use the Console.WriteLine() method to output the result.
+Console.WriteLine("Index of 'o' in the string: " + result.IndexOf('o'));
 
 //Part 5
 //Write a program to find the index of a character in a string starting from a specified position.
 //Hint: You can use the IndexOf() method to find the index of a character in a string starting from a specified position.
 //Hint: You can use the Console.WriteLine() method to output the result.
+Console.WriteLine("Index of 'o' in the string starting from position 5: " + result.IndexOf('o', 5));
 
 //Part 6
 //Write a program to count the occurrences of a specific character in a string.
 //Hint: You can use the Count() method to count the occurrences of a specific character in a string.
 //Hint: You can use the Console.WriteLine() method to output the result.
-
+Console.WriteLine("Number of 'e' in the string: " + result.Count(x => x == 'e'));
 
 //Part 7
 //Write a program to replace a character in a string with another character.
 //Hint: You can use the Replace() method to replace a character in a string with another character.
 //Hint: You can use the Console.WriteLine() method to output the result.
+int index = result.IndexOf('e'); // Find the index of the first 'e'
+if (index != -1) // Check if 'e' is found
+{
+    result = result.Substring(0, index) + 'a' + result.Substring(index + 1);
+}
+Console.WriteLine("After replacing one 'e' with 'a': " + result);
 
 //Part 8
 //Write a program to remove a character from a string.
 //Hint: You can use the Remove() method to remove a character from a string.
 //Hint: You can use the Console.WriteLine() method to output the result.
+Console.WriteLine("Remove 'e' from the string: " + result.Remove(result.IndexOf('e'), 1));
 
 //Part 9
 //Write a program to replace all occurrences of a specific character in a string with another character.
 //Hint: You can use the Replace() method to remove all occurrences of a specific character from a string.
 //Hint: You can use the Console.WriteLine() method to output the result.
+Console.WriteLine("Replace all 'l' with 'r': " + result.Replace('l', 'r'));
 
 //Part 10
 //Write a program to extract a substring from a string.
 //Hint: You can use the Substring() method to extract a substring from a string.
 //Hint: You can use the Console.WriteLine() method to output the result.
+Console.WriteLine("Extract substring from position 6: " + result.Substring(6));
 
 //Part 11
 //Write a program to extract a substring from a string starting from a specified position.
 //Hint: You can use the Substring() method to extract a substring from a string starting from a specified position.
 //Hint: You can use the Console.WriteLine() method to output the result.
+Console.WriteLine("Extract substring from position 6 with length 5: " + result.Substring(6, 5));
 
 //Part 12
 //Write a program to remove leading and trailing whitespace from a string.
 //Hint: You can use the Trim() method to remove leading and trailing whitespace from a string.
 //Hint: You can use the Console.WriteLine() method to output the result.
+string str4 = "  Hello World!  ";
+Console.WriteLine("Before trimming: " + str4);
+Console.WriteLine("After trimming: " + str4.Trim());
 
 //Part 13 
 //Write a program to parse a string to a number.
 //Hint: You can use the Parse() method to parse a string to a number.
 //Hint: You can use the Console.WriteLine() method to output the result.
+string str5 = "123";
+int number = int.Parse(str5);
+Console.WriteLine("Parsed number: " + number);
 
 //Part 14
 //Write a program to convert a number to a string.
 //Hint: You can use the ToString() method to convert a number to a string.
 //Hint: You can use the Console.WriteLine() method to output the result.
-
+int number2 = 456;
+string str6 = number2.ToString();
+Console.WriteLine("Converted string: " + str6);
 
 
 
@@ -88,7 +117,7 @@
 
 
 //////////////////Formating////////////////////
-
+Console.WriteLine("\n//////////////////Formating////////////////////\n");
 
 
 
@@ -104,12 +133,11 @@
 // Event date: January 15, 2025
 // Expected Output:
 // Hello, Alice! You're invited to our team outing on January 15, 2025. The event starts at 09:00.
-
-
-
-
-
-
+var recipentName = "Alice";
+var eventDate = "January 15, 2025";
+var currentTime = "09:00";
+var invitation = "Hello, {0}! You're invited to our team outing on {1}. The event starts at {2}.";
+Console.WriteLine(invitation, recipentName, eventDate, currentTime);
 
 
 // Part 2
@@ -124,13 +152,11 @@
 // Purchase details: 2 x T-shirts, 3 x Jeans
 // Expected Output:
 // Dear John Doe, your order (ID: 123456) has been confirmed. You've purchased: 2 x T-shirts, 3 x Jeans.
-
-
-
-
-
-
-
+var customerName = "John Doe";
+var orderID = 123456;
+var purchaseDetails = "2 x T-shirts, 3 x Jeans";
+var orderConfirmation = "Dear {0}, your order (ID: {1}) has been confirmed. You've purchased: {2}.";
+Console.WriteLine(orderConfirmation, customerName, orderID, purchaseDetails);
 
 
 // Part 3
@@ -145,13 +171,11 @@
 // Priority level: High
 // Expected Output:
 // Reminder: Complete Project Proposal is due on May 10, 2025. Priority: High.
-
-
-
-
-
-
-
+var taskName = "Complete Project Proposal";
+var dueDate = "May 10, 2025";
+var priorityLevel = "High";
+var taskReminder = "Reminder: {0} is due on {1}. Priority: {2}.";
+Console.WriteLine(taskReminder, taskName, dueDate, priorityLevel);
 
 
 // Part 4
@@ -166,16 +190,11 @@
 // Start time: 10:00 AM
 // Expected Output:
 // Reminder: Team Meeting at Conference Room A starts at 10:00 AM.
-
-
-
-
-
-
-
-
-
-
+var eventTitle = "Team Meeting";
+var location = "Conference Room A";
+var startTime = "10:00 AM";
+var eventReminder = "Reminder: {0} at {1} starts at {2}.";
+Console.WriteLine(eventReminder, eventTitle, location, startTime);
 
 
 // Part 5
@@ -190,18 +209,11 @@
 // Scheduled time: 08:30 AM
 // Expected Output:
 // Flight ABC123 departing from JFK International Airport is scheduled for 08:30 AM.
-
-
-
-
-
-
-
-
-
-
-
-
+var flightNumber = "ABC123";
+var departureAirport = "JFK International Airport";
+var scheduledTime = "08:30 AM";
+var departureNotification = "Flight {0} departing from {1} is scheduled for {2}.";
+Console.WriteLine(departureNotification, flightNumber, departureAirport, scheduledTime);
 
 
 // Part 6
@@ -214,16 +226,9 @@
 // Enter your name: Alice
 // Expected Output:
 // Hello, Alice! Welcome to our messaging app.
-
-
-
-
-
-
-
-
-
-
+Console.Write("Enter your name: ");
+var userName = Console.ReadLine();
+Console.WriteLine($"Hello, {userName}! Welcome to our messaging app.");
 
 
 // Part 7
@@ -237,16 +242,11 @@
 // Character's class: Archer
 // Expected Output:
 // Custom Badge: Legolas the Archer
-
-
-
-
-
-
-
-
-
-
+Console.Write("Character's name: ");
+var characterName = Console.ReadLine();
+Console.Write("Character's class: ");
+var characterClass = Console.ReadLine();
+Console.WriteLine($"Custom Badge: {characterName} the {characterClass}");
 
 
 // Part 8
@@ -260,12 +260,11 @@
 // Enter the song's duration in seconds: 245
 // Expected Output:
 // Song Duration: 4 minutes 5 seconds
-
-
-
-
-
-
+Console.Write("Enter the song's duration in seconds: ");
+var songDuration = int.Parse(Console.ReadLine());
+var minutes = songDuration / 60;
+var seconds = songDuration % 60;
+Console.WriteLine($"Song Duration: {minutes} minutes {seconds} seconds");
 
 
 // Part 9
@@ -279,14 +278,9 @@
 // Enter the number of servings: 8
 // Expected Output:
 // Serving Size:     8
-
-
-
-
-
-
-
-
+Console.Write("Enter the number of servings: ");
+var servings = int.Parse(Console.ReadLine());
+Console.WriteLine($"Serving Size: {servings,5}");
 
 
 // Part 10
@@ -300,12 +294,9 @@
 // Enter the account balance: 1050.75
 // Expected Output:
 // Account Balance: 1050.75
-
-
-
-
-
-
+Console.Write("Enter the account balance: ");
+var accountBalance = double.Parse(Console.ReadLine());
+Console.WriteLine($"Account Balance: {accountBalance,10:0.00}");
 
 
 
@@ -321,13 +312,12 @@
 // Enter the discount percentage: 15
 // Expected Output:
 // Discounted Price: 21.68
-
-
-
-
-
-
-
+Console.Write("Enter the ticket price: ");
+var ticketPrice = double.Parse(Console.ReadLine());
+Console.Write("Enter the discount percentage: ");
+var discountPercentage = double.Parse(Console.ReadLine());
+var discountedPrice = ticketPrice - (ticketPrice * discountPercentage / 100);
+Console.WriteLine($"Discounted Price: {discountedPrice,10:0.00}");
 
 
 // Part 12
@@ -341,12 +331,9 @@
 // Enter the player's score: 10325
 // Expected Output:
 // Player's Score:   10325
-
-
-
-
-
-
+Console.Write("Enter the player's score: ");
+var playerScore = int.Parse(Console.ReadLine());
+Console.WriteLine($"Player's Score: {playerScore,8}");
 
 
 // Part 13
@@ -360,14 +347,10 @@
 // Enter a series of numbers: 10 15 20 25 30
 // Expected Output:
 // Average Value: 20.00
-
-
-
-
-
-
-
-
+Console.Write("Enter a series of numbers: ");
+var numbers = Console.ReadLine().Split(' ').Select(int.Parse).ToList();
+var average = numbers.Average();
+Console.WriteLine($"Average Value: {average,10:0.00}");
 
 
 // Part 14
@@ -381,14 +364,10 @@
 // Enter temperatures for 3 days: 25.5 28.7 22.3
 // Expected Output:
 // Average Temperature: 25.5
-
-
-
-
-
-
-
-
+Console.Write("Enter temperatures for 3 days: ");
+var temperatures = Console.ReadLine().Split(' ').Select(double.Parse).ToList();
+var averageTemperature = temperatures.Average();
+Console.WriteLine($"Average Temperature: {averageTemperature,10:0.0}");
 
 
 // Part 15
@@ -402,7 +381,6 @@
 // Enter the steps taken: 12345
 // Expected Output:
 // Step Count:  12345
-
-
-
-
+Console.Write("Enter the steps taken: ");
+var stepCount = int.Parse(Console.ReadLine());
+Console.WriteLine($"Step Count: {stepCount,6}");
