@@ -119,6 +119,7 @@ Console.WriteLine("\n////////////// Break , Continue Statements //////////////\n
 //Part 1
 // Create a program that counts from 1 to 20, but skips counting the number 5.
 // Hint: Use a for loop to iterate through the numbers and a continue statement to skip the number 5.
+Console.WriteLine("Counting from 1 to 20, but skipping the number 5:");
 for (int i = 1; i <= 20; i++)
 {
     if (i == 5)
@@ -131,6 +132,7 @@ for (int i = 1; i <= 20; i++)
 //Part 2
 // Create a program that prints the numbers from 1 to 10, but breaks the loop if the number 7 is encountered.
 // Hint: Use a for loop to iterate through the numbers and a break statement to exit the loop when 7 is encountered.
+Console.WriteLine("Printing numbers from 1 to 10, but breaking the loop if the number 7 is encountered:");
 for (int i = 1; i <= 10; i++)
 {
     if (i == 7)
@@ -143,40 +145,134 @@ for (int i = 1; i <= 10; i++)
 //Part 3
 // Write a program to print all even numbers from 1 to 20, but skip printing the number 10.
 // Hint: Use a for loop to iterate through the numbers and an if statement with a continue statement to skip printing 10.
+Console.WriteLine("Printing even numbers from 1 to 20, but skipping the number 10:");
+for (int i = 1; i <= 20; i++)
+{
+    if (i % 2 == 0)
+    {
+        if (i == 10)
+        {
+            continue;
+        }
+        Console.WriteLine(i);
+    }
+}
 
 //Part 4
 // Create a program that searches for the word "apple" in a list of fruits. If found, print "Apple found!"; otherwise, continue searching.
 // Hint: Use a foreach loop to iterate through the list of fruits and an if statement to check if the current fruit is "apple". Use a continue statement to continue searching if "apple" is not found.
+string[] fruits = { "banana", "orange", "apple", "grapes", "mango" };
+foreach (string fruit in fruits)
+{
+    if (fruit == "apple")
+    {
+        Console.WriteLine("Apple found!");
+        break;
+    }
+    else
+    {
+        continue;
+    }
+}
 
 //Part 5
 // Write a program to count from 1 to 100, but skip counting by 10s.
 // Hint: Use a for loop to iterate through the numbers and an if statement with a continue statement to skip counting by 10s.
+Console.WriteLine("Counting from 1 to 100, but skipping by 10s:");
+for (int i = 1; i <= 100; i++)
+{
+    if (i % 10 == 0)
+    {
+        continue;
+    }
+    Console.WriteLine(i);
+}
 
 //Part 6
 // Create a program to print the letters of the alphabet from A to G, but skip printing the letter 'E'.
 // Hint: Use a for loop to iterate through the alphabet and an if statement with a continue statement to skip printing 'E'.
+Console.WriteLine("Printing the letters of the alphabet from A to G, but skipping the letter 'E':");
+for (char letter = 'A'; letter <= 'G'; letter++)
+{
+    if (letter == 'E')
+    {
+        continue;
+    }
+    Console.WriteLine(letter);
+}
 
 //Part 7
 // Write a program to find and print all prime numbers between 1 and 50, skipping non-prime numbers.
 // Hint: Use a for loop to iterate through the numbers and an if statement with a continue statement to skip non-prime numbers.
+Console.WriteLine("Prime numbers between 1 and 50:");
+for (int i = 1; i <= 50; i++)
+{
+    if (i == 1)
+    {
+        continue;
+    }
+    bool isPrime = true;
+    for (int j = 2; j <= i / 2; j++)
+    {
+        if (i % j == 0)
+        {
+            isPrime = false;
+            break;
+        }
+    }
+    if (isPrime)
+    {
+        Console.WriteLine(i);
+    }
+}
 
 //Part 8
 // Create a program to print the numbers from 1 to 10, but skip printing the number 3.
 // Hint: Use a for loop to iterate through the numbers and an if statement with a continue statement to skip printing 3.
+Console.WriteLine("Printing numbers from 1 to 10, but skipping the number 3:");
+for (int i = 1; i <= 10; i++)
+{
+    if (i == 3)
+    {
+        continue;
+    }
+    Console.WriteLine(i);
+}
 
 //Part 9
 // Write a program to search for the number 20 in an array of integers. If found, print its index; otherwise, continue searching.
 // Hint: Use a for loop to iterate through the array and an if statement to check if the current element is 20. Use a continue statement to continue searching if 20 is not found.
+int[] numbers = { 10, 15, 20, 25, 30 };
+for (int i = 0; i < numbers.Length; i++)
+{
+    if (numbers[i] == 20)
+    {
+        Console.WriteLine("Number 20 found at index: " + i);
+        break;
+    }
+    else
+    {
+        continue;
+    }
+}
 
 //Part 10
 // Create a program that prints the names of different fruits, but skips printing the name "banana".
 // Hint: Use a foreach loop to iterate through the list of fruits and an if statement with a continue statement to skip printing "banana".
-
-
+// fruits = { "apple", "banana", "orange", "grapes", "mango" };
+foreach (string fruit in fruits)
+{
+    if (fruit == "banana")
+    {
+        continue;
+    }
+    Console.WriteLine(fruit);
+}
 
 
 
 ////////////// Extra Challenges //////////////
+Console.WriteLine("\n////////////// Extra Challenges //////////////\n");
 
 /*
 Part 11
@@ -191,6 +287,18 @@ Enter the monthly sales: 12000
 Commission earned: $1200.00
 
 */
+Console.Write("Enter the monthly sales: ");
+double sale = Convert.ToDouble(Console.ReadLine());
+double commission = 0;
+if (sale >= 10000)
+{
+    commission = sale * 0.10;
+}
+else
+{
+    commission = sale * 0.05;
+}
+Console.WriteLine("Commission earned: $" + commission);
 
 
 /*
@@ -203,8 +311,19 @@ Hint: You need to use the random module.
 Example:
 Enter the sum of 43 and 58: 100
 Correct!
-
  */
+num1 = new Random().Next(0, 101);
+num2 = new Random().Next(0, 101);
+Console.Write("Enter the sum of " + num1 + " and " + num2 + ": ");
+int sum = Convert.ToInt32(Console.ReadLine());
+if (sum == num1 + num2)
+{
+    Console.WriteLine("Correct!");
+}
+else
+{
+    Console.WriteLine("Wrong! The correct answer is " + (num1 + num2));
+}
 
 
 
@@ -231,10 +350,56 @@ Example:
 Enter student's marks: 82
 Grade: A
 Comment: Well done.
- 
+*/
+Console.Write("Enter student's marks: ");
+int marks = Convert.ToInt32(Console.ReadLine());
+string grade = "";
+string comment = "";
+if (marks >= 85)
+{
+    grade = "A+";
+    comment = "Excellent!";
+}
+else if (marks >= 80)
+{
+    grade = "A";
+    comment = "Well done.";
+}
+else if (marks >= 75)
+{
+    grade = "B+";
+}
+else if (marks >= 70)
+{
+    grade = "B";
+}
+else if (marks >= 65)
+{
+    grade = "C+";
+}
+else if (marks >= 60)
+{
+    grade = "C";
+}
+else if (marks >= 55)
+{
+    grade = "D+";
+}
+else if (marks >= 50)
+{
+    grade = "D";
+}
+else
+{
+    grade = "F";
+    comment = "See me.";
+}
+Console.WriteLine("Grade: " + grade);
+if (comment != "")
+{
+    Console.WriteLine("Comment: " + comment);
+}
 
- 
- */
 
 
 
@@ -262,3 +427,24 @@ The guard will advance.
  
  
  */
+bool sees_player = true;
+int dist_from_player = 3;
+if (sees_player)
+{
+    if (dist_from_player <= 1)
+    {
+        Console.WriteLine("The guard will attack.");
+    }
+    else if (dist_from_player >= 2 && dist_from_player <= 4)
+    {
+        Console.WriteLine("The guard will advance.");
+    }
+    else
+    {
+        Console.WriteLine("The guard will wait.");
+    }
+}
+else
+{
+    Console.WriteLine("The guard will wait.");
+}
