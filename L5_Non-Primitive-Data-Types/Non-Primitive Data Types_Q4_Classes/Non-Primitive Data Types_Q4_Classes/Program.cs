@@ -256,6 +256,167 @@ public class Program
 {
     public static void Main()
     {
-        
+        // Implement the above classes and test their functionality here
+        // Create instances of the classes and call their methods to demonstrate their behavior
+        // You can create sample characters, items, spells, quests, etc., and interact with them in the program
+        // Feel free to add additional features or classes to enhance the program
+        Player player = new Player
+        {
+            Name = "Hero",
+            HP = 100,
+            AttackPower = 20,
+            Defense = 10,
+            Level = 1,
+            MP = 50,
+            XP = 0
+        };
+
+        Enemy enemy = new Enemy
+        {
+            Name = "Goblin",
+            HP = 50,
+            AttackPower = 15,
+            Defense = 5
+        };
+
+        Potion healthPotion = new Potion
+        {
+            Name = "Health Potion",
+            HealingPower = 30,
+            Quantity = 3
+        };
+
+        Item sword = new Item
+        {
+            Name = "Sword",
+            Description = "A basic weapon for melee combat.",
+            Value = 50
+        };
+
+        Quest mainQuest = new Quest
+        {
+            Name = "Defeat the Dragon",
+            Description = "Slay the mighty dragon terrorizing the kingdom.",
+            Reward = new Rewards
+            {
+                XPValue = 100,
+                Items = new List<Item> { sword }
+            },
+            IsCompleted = false
+        };
+
+        Inventory playerInventory = new Inventory
+        {
+            Capacity = 5,
+            Items = new List<Item>()
+        };
+
+        playerInventory.AddItem(sword);
+
+        Console.WriteLine("Player Information:");
+        Console.WriteLine($"Name: {player.Name}");
+        Console.WriteLine($"Level: {player.Level}");
+        Console.WriteLine($"HP: {player.HP}");
+        Console.WriteLine($"MP: {player.MP}");
+        Console.WriteLine($"XP: {player.XP}");
+        Console.WriteLine("--------------------------------------------------");
+
+        Console.WriteLine("Enemy Information:");
+        Console.WriteLine($"Name: {enemy.Name}");
+        Console.WriteLine($"HP: {enemy.HP}");
+        Console.WriteLine($"Attack Power: {enemy.AttackPower}");
+        Console.WriteLine($"Defense: {enemy.Defense}");
+        Console.WriteLine("--------------------------------------------------");
+
+        Console.WriteLine("Potion Information:");
+        Console.WriteLine($"Name: {healthPotion.Name}");
+        Console.WriteLine($"Healing Power: {healthPotion.HealingPower}");
+        Console.WriteLine($"Quantity: {healthPotion.Quantity}");
+        Console.WriteLine("--------------------------------------------------");
+
+        Console.WriteLine("Item Information:");
+        sword.DisplayDetails();
+        Console.WriteLine("--------------------------------------------------");
+
+        Console.WriteLine("Quest Information:");
+        Console.WriteLine($"Name: {mainQuest.Name}");
+        Console.WriteLine($"Description: {mainQuest.Description}");
+        Console.WriteLine($"Reward: {mainQuest.Reward.XPValue} XP");
+        Console.WriteLine("--------------------------------------------------");
+
+        Console.WriteLine("Inventory Information:");
+        Console.WriteLine($"Capacity: {playerInventory.Capacity}");
+        Console.WriteLine("Items:");
+        foreach (Item item in playerInventory.Items)
+        {
+            item.DisplayDetails();
+        }
+        Console.WriteLine("--------------------------------------------------");
+
+        // Simulate player attacking the enemy
+        player.Inflictdamage(enemy);
+
+        Console.WriteLine("After Player Attacks Enemy:");
+        Console.WriteLine("Player HP: " + player.HP);
+        Console.WriteLine("Enemy HP: " + enemy.HP);
+        Console.WriteLine("--------------------------------------------------");
+
+        // Simulate player using a health potion
+        healthPotion.Apply(player);
+        Console.WriteLine("After Player Uses Health Potion:");
+        Console.WriteLine("Player HP: " + player.HP);
+        Console.WriteLine("--------------------------------------------------");
+
+        // Simulate player completing a quest
+        mainQuest.Complete();
+        mainQuest.ClaimReward(player);
+        Console.WriteLine("After Player Completes Quest:");
+        Console.WriteLine("Player XP: " + player.XP);
+        Console.WriteLine("--------------------------------------------------");
+
+        // Simulate player adding an item to the inventory
+        Item newSword = new Item
+        {
+            Name = "Great Sword",
+            Description = "A powerful two-handed sword.",
+            Value = 100
+        };
+        playerInventory.AddItem(newSword);
+
+        Console.WriteLine("After Player Adds Item to Inventory:");
+        Console.WriteLine("Inventory Items:");
+        foreach (Item item in playerInventory.Items)
+        {
+            item.DisplayDetails();
+        }
+        Console.WriteLine("--------------------------------------------------");
+
+        // Simulate player removing an item from the inventory
+        playerInventory.RemoveItem(sword);
+
+        Console.WriteLine("After Player Removes Item from Inventory:");
+        Console.WriteLine("Inventory Items:");
+        foreach (Item item in playerInventory.Items)
+        {
+            item.DisplayDetails();
+        }
+        Console.WriteLine("--------------------------------------------------");
+
+        // Simulate enemy dropping rewards
+        enemy.Loots = new Rewards
+        {
+            XPValue = 50,
+            Items = new List<Item> { sword }
+        };
+        enemy.Drops();
+
+        Console.WriteLine("After Enemy Drops Rewards:");
+        Console.WriteLine("Player XP: " + player.XP);
+        Console.WriteLine("Inventory Items:");
+        foreach (Item item in playerInventory.Items)
+        {
+            item.DisplayDetails();
+        }
+        Console.WriteLine("--------------------------------------------------");
     }
 }
