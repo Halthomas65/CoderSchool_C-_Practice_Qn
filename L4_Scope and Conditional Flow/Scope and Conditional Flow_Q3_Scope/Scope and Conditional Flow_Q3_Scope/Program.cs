@@ -19,13 +19,14 @@ Console.WriteLine("You stumble upon an ancient cave with mysterious inscriptions
 // Enter the cave to explore
 Console.WriteLine("\nYou enter the dark cave, your heart pounding with excitement.");
 
+// Declare your character's health and energy levels
+int health = 100;
+int energy = 50;
+// Declare a variable for finding a treasure chest
+int treasureChestGold = 1000;
+
 // Start a new block for inside the cave
 {
-    // Declare your character's health and energy levels
-    int health = 100;
-    int energy = 50;
-    // Declare a variable for finding a treasure chest
-    int treasureChestGold = 1000;
     // Explore the cave and find the treasure chest
     Console.WriteLine("\nYou stumble upon an old treasure chest, hidden beneath rubble!");
     Console.WriteLine("Your eyes widen as you uncover the gleaming gold coins inside.");
@@ -34,13 +35,13 @@ Console.WriteLine("\nYou enter the dark cave, your heart pounding with excitemen
 
 // Attempt to access the treasure chest gold outside the cave
 // This will result in a compilation error because treasureChestGold is out of scope here
-// Console.WriteLine("You count your gold coins outside the cave: " + treasureChestGold);
 
 // Continue your adventure
 Console.WriteLine("\nWith your newfound wealth, you continue your journey deeper into the forest.");
 Console.WriteLine("Your health: " + health);
 Console.WriteLine("Your energy: " + energy);
-Console.WriteLine(treasureChestGold); // This will result in a compilation error because treasureChestGold is out of scope here
+Console.WriteLine("You count your gold coins outside the cave: " + treasureChestGold);
+// Console.WriteLine(treasureChestGold); // This will result in a compilation error because treasureChestGold is out of scope here
 
 
 
@@ -66,14 +67,14 @@ Console.WriteLine("Your keen eyes scan the surroundings for any clues.");
 // Declare variables for evidence found at the crime scene
 string evidence1;
 string evidence2;
+// Declare a variable for a key piece of evidence
+string fingerprint = "Unknown";
 
 // Begin your investigation
 Console.WriteLine("\nYou start gathering evidence, carefully collecting any clues left behind.");
 
 // Start a new block for searching the crime scene
 {
-    // Declare a variable for a key piece of evidence
-    string fingerprint = "Unknown";
     // Investigate further and find a torn piece of cloth
     Console.WriteLine("\nYou discover a torn piece of cloth with a mysterious symbol.");
     Console.WriteLine("Your heart races as you realize its significance: " + fingerprint);
@@ -112,14 +113,14 @@ Console.WriteLine("Your mission is to uncover the secrets of a mysterious substa
 // Declare variables for lab experiment results
 double result1;
 double result2;
+// Declare a variable for the concentration of the substance
+double concentration = 0.5;
 
 // Begin your experiment
 Console.WriteLine("\nYou set up your equipment and prepare to conduct the experiment.");
 
 // Start a new block for conducting the experiment
 {
-    // Declare a variable for the concentration of the substance
-    double concentration = 0.5;
     // Perform the experiment and observe the first result
     Console.WriteLine("\nYou conduct the first experiment and observe the results.");
     result1 = concentration * 10;
