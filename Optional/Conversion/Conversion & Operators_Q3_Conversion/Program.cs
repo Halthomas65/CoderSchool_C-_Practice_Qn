@@ -19,7 +19,28 @@
 //Enter your weight in kilograms: 68
 //Your BMI is 22.2
 //You are Normal
-
+Console.Write("Enter your height in meters: ");
+double height = double.Parse(Console.ReadLine());
+Console.Write("Enter your weight in kilograms: ");
+double weight = double.Parse(Console.ReadLine());
+double bmi = weight / (height * height);
+Console.WriteLine($"Your BMI is {bmi}");
+if (bmi < 18.5)
+{
+    Console.WriteLine("You are Underweight");
+}
+else if (bmi < 25)
+{
+    Console.WriteLine("You are Normal");
+}
+else if (bmi < 30)
+{
+    Console.WriteLine("You are Overweight");
+}
+else
+{
+    Console.WriteLine("You are Obese");
+}
 
 
 //Part 2
@@ -38,6 +59,17 @@
 //Enter your weight in pounds: 150
 //Your BMI is 22.1
 //You are Normal
+Console.Write("Enter your height in feet: ");
+int feet = int.Parse(Console.ReadLine());
+Console.Write("Enter your height in inches: ");
+int inches = int.Parse(Console.ReadLine());
+Console.Write("Enter your weight in pounds: ");
+int pounds = int.Parse(Console.ReadLine());
+double heightInMeters = (feet * 0.3048) + (inches * 0.0254);
+double weightInKilograms = pounds * 0.453592;
+bmi = weightInKilograms / (heightInMeters * heightInMeters);
+Console.WriteLine($"Your BMI is {bmi}");
+
 
 //Part 3
 
@@ -46,6 +78,11 @@
 //Test Data
 //Player's Score: 100
 //Player's Score with one decimal place: 100.0
+Console.Write("Player's Score: ");
+int score = int.Parse(Console.ReadLine());
+double scoreWithOneDecimal = score;
+Console.WriteLine($"Player's Score with one decimal place: {scoreWithOneDecimal:0.0}");
+
 
 //Part 4
 //In a game, the player's health is stored as a double, but you need to display it as a percentage (integer value). Convert the player's health from a double to an integer representing a percentage and print the result.
@@ -53,6 +90,10 @@
 //Test Data
 //Player's Health: 0.75
 //Player's Health as a percentage: 75%
+Console.Write("Player's Health: ");
+double health = double.Parse(Console.ReadLine());
+int healthPercentage = (int)(health * 100);
+Console.WriteLine($"Player's Health as a percentage: {healthPercentage}%");
 
 
 //Part 5
@@ -62,6 +103,11 @@
 //Test Data
 //Player's Coins: 123.45
 //Player's Coins as an integer: 123
+Console.Write("Player's Coins: ");
+double coins = double.Parse(Console.ReadLine());
+int coinsAsInteger = (int)coins;
+Console.WriteLine($"Player's Coins as an integer: {coinsAsInteger}");
+
 
 //Part 6
 
@@ -72,7 +118,7 @@
 //Test Data
 //Player's Progress: true
 //Player's Progress as a string: Completed
-
-
-
-
+Console.Write("Player's Progress: ");
+bool progress = bool.Parse(Console.ReadLine());
+string progressAsString = progress ? "Completed" : "Incomplete";
+Console.WriteLine($"Player's Progress as a string: {progressAsString}");
