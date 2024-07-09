@@ -1,4 +1,5 @@
-﻿// To test out your code , comment the other parts and uncomment the part you want to test.
+﻿using System.Globalization;
+// To test out your code , comment the other parts and uncomment the part you want to test.
 //To comment a part, select the part and press Ctrl + K + C
 //To uncomment a part, select the part and press Ctrl + K + U
 //Press Ctrl + F5 to run the code.
@@ -14,6 +15,8 @@
 //Test Data:
 //Expected Output:
 //The value of num is: 10
+int num = 10;
+Console.WriteLine("The value of num is: " + num);
 
 
 //Part 2
@@ -25,6 +28,9 @@
 //lastName = "Doe"
 //Expected Output:
 //The full name is: John Doe
+string firstName = "John";
+string lastName = "Doe";
+Console.WriteLine("The full name is: " + firstName + " " + lastName);
 
 
 //Part 3
@@ -35,6 +41,10 @@
 //Enter your age: 25
 //Expected Output:
 //Your age is: 25
+Console.WriteLine("Enter your age: ");
+int age = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Your age is: " + age);
+
 
 //Part 4
 
@@ -43,6 +53,10 @@
 //Test Data:
 //Expected Output:
 //The sum of 5 and 7 is: 12
+int num1 = 5;
+int num2 = 7;
+int sum = num1 + num2;
+Console.WriteLine("The sum of " + num1 + " and " + num2 + " is: " + sum);
 
 
 //Part 5
@@ -53,7 +67,9 @@
 //Celsius temperature: 25
 //Expected Output:
 //The Fahrenheit equivalent is: 77
-
+int celsius = 25;
+double fahrenheit = (celsius * 9 / 5) + 32;
+Console.WriteLine("The Fahrenheit equivalent of " + celsius + " Celsius is: " + fahrenheit);
 
 
 
@@ -71,6 +87,8 @@
 //Test Data:
 //Expected Output:
 //Player's health: 100
+int playerHealth = 100;
+Console.WriteLine("Player's health: " + playerHealth);
 
 
 //Part 7
@@ -81,6 +99,12 @@
 //Enter your name: Alice
 //Expected Output:
 //Welcome to the game, Alice!
+Console.WriteLine("Enter your name: ");
+string playerName = Console.ReadLine();
+string gameTitle = "Adventure Quest";
+string welcomeMessage = "Welcome to " + gameTitle + ", " + playerName + "!";
+Console.WriteLine(welcomeMessage);
+
 
 //Part 8
 
@@ -91,6 +115,11 @@
 //Width: 5
 //Expected Output:
 //The area of the rectangular movement space is: 50
+int length = 10;
+int width = 5;
+int area = length * width;
+Console.WriteLine("The area of the rectangular movement space is: " + area);
+
 
 
 //Part 9
@@ -101,6 +130,9 @@
 //Test Data
 //Player's Level: Level 10
 //Player's Level as an integer: 10
+string playerLevel = "Level 10";
+int level = Convert.ToInt32(playerLevel.Substring(6).Trim());
+Console.WriteLine("Player's Level as an integer: " + level);
 
 
 //Part 10
@@ -110,6 +142,10 @@
 //Test Data:
 //Expected Output:
 //The total score is: 150
+int enemyPoints = 100;
+int bonusPoints = 50;
+int totalScore = enemyPoints + bonusPoints;
+Console.WriteLine("The total score is: " + totalScore);
 
 
 
@@ -130,7 +166,14 @@
 //The string in upper case: WELCOME TO THE WORLD OF C#
 //The string in lower case: welcome to the world of c#
 //The string in title case: Welcome To The World Of C#
-
+Console.WriteLine("Enter the string: ");
+string inputString = Console.ReadLine();
+string upperCaseString = inputString.ToUpper();
+string lowerCaseString = inputString.ToLower();
+string titleCaseString = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(inputString.ToLower());
+Console.WriteLine("The string in upper case: " + upperCaseString);
+Console.WriteLine("The string in lower case: " + lowerCaseString);
+Console.WriteLine("The string in title case: " + titleCaseString);
 
 
 
@@ -144,6 +187,15 @@
 //Enter the time period: 3
 //Expected Output:
 //The compound interest is: 157.63
+Console.WriteLine("Enter the principal amount: ");
+double principalAmount = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter the interest rate: ");
+double interestRate = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("Enter the time period: ");
+double timePeriod = Convert.ToDouble(Console.ReadLine());
+double compoundInterest = principalAmount * Math.Pow((1 + interestRate / 100), timePeriod) - principalAmount;
+Console.WriteLine("The compound interest is: " + compoundInterest);
+
 
 
 //Part 13
@@ -158,7 +210,16 @@
 //After swapping:
 //First number: 10
 //Second number: 5
-
+Console.WriteLine("Enter the first number: ");
+int firstNumber = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the second number: ");
+int secondNumber = Convert.ToInt32(Console.ReadLine());
+int temp = firstNumber;
+firstNumber = secondNumber;
+secondNumber = temp;
+Console.WriteLine("After swapping:");
+Console.WriteLine("First number: " + firstNumber);
+Console.WriteLine("Second number: " + secondNumber);
 
 
 
@@ -171,7 +232,15 @@
 //Expected Output:
 //The 3 numbers are: 25 78 87
 //The greatest number is: 87
-
+Console.WriteLine("Enter the first number: ");
+num1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the second number: ");
+num2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the third number: ");
+int num3 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("The 3 numbers are: " + num1 + " " + num2 + " " + num3);
+int max = Math.Max(num1, Math.Max(num2, num3));
+Console.WriteLine("The greatest number is: " + max);
 
 
 //Part 15
@@ -183,7 +252,19 @@
 //Enter the second number: 18
 //Expected Output:
 //The GCD of 12 and 18 is: 6
-
+Console.WriteLine("Enter the first number: ");
+num1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the second number: ");
+num2 = Convert.ToInt32(Console.ReadLine());
+int gcd = 1;
+for (int i = 1; i <= num1 && i <= num2; i++)
+{
+    if (num1 % i == 0 && num2 % i == 0)
+    {
+        gcd = i;
+    }
+}
+Console.WriteLine("The GCD of " + num1 + " and " + num2 + " is: " + gcd);
 
 
 
@@ -203,6 +284,10 @@
 //Enter the radius of the sphere: 3
 //Expected Output:
 //The volume of the sphere is: 113.09733552923255
+Console.WriteLine("Enter the radius of the sphere: ");
+double radius = Convert.ToDouble(Console.ReadLine());
+double volume = (4.0 / 3.0) * Math.PI * Math.Pow(radius, 3);
+Console.WriteLine("The volume of the sphere is: " + volume);
 
 
 //Part 17
@@ -215,6 +300,14 @@
 //Enter the starting position: 5
 //Expected Output:
 //The index of 'o' starting from position 5 is: 7
+Console.WriteLine("Enter the string: ");
+inputString = Console.ReadLine();
+Console.WriteLine("Enter the character to find: ");
+char character = Convert.ToChar(Console.ReadLine());
+Console.WriteLine("Enter the starting position: ");
+int startingPosition = Convert.ToInt32(Console.ReadLine());
+int index = inputString.IndexOf(character, startingPosition);
+Console.WriteLine("The index of '" + character + "' starting from position " + startingPosition + " is: " + index);
 
 
 //Part 18
@@ -226,6 +319,12 @@
 //Enter the character to remove: p
 //Expected Output:
 //The string after removing 'p' is: ale
+Console.WriteLine("Enter the string: ");
+inputString = Console.ReadLine();
+Console.WriteLine("Enter the character to remove: ");
+character = Convert.ToChar(Console.ReadLine());
+string result = inputString.Replace(character.ToString(), "");
+Console.WriteLine("The string after removing '" + character + "' is: " + result);
 
 
 //Part 19
@@ -238,6 +337,14 @@
 //Enter the character to replace with: o
 //Expected Output:
 //The string after replacing 'a' with 'o' is: bonono
+Console.WriteLine("Enter the string: ");
+inputString = Console.ReadLine();
+Console.WriteLine("Enter the character to replace: ");
+char charToReplace = Convert.ToChar(Console.ReadLine());
+Console.WriteLine("Enter the character to replace with: ");
+char replacementChar = Convert.ToChar(Console.ReadLine());
+result = inputString.Replace(charToReplace, replacementChar);
+Console.WriteLine("The string after replacing '" + charToReplace + "' with '" + replacementChar + "' is: " + result);
 
 
 //Part 20
@@ -250,4 +357,11 @@
 //Enter the end index: 7
 //Expected Output:
 //The substring from index 3 to 7 is: lo w
-
+Console.WriteLine("Enter the string: ");
+inputString = Console.ReadLine();
+Console.WriteLine("Enter the start index: ");
+int startIndex = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Enter the end index: ");
+int endIndex = Convert.ToInt32(Console.ReadLine());
+result = inputString.Substring(startIndex, endIndex - startIndex + 1);
+Console.WriteLine("The substring from index " + startIndex + " to " + endIndex + " is: " + result);
